@@ -1,10 +1,10 @@
 node {
     stage('Clone code') {
-        git 'https://github.com/Cydeo-SD-US030/selenium-grid-demo'
-    }
+        git 'https://github.com/ShukhratR/selenium-grid-demo/tree/master'
+    }  // clone code from this repository
 
     stage('Run tests'){
-        if(isUnix()){
+        if(isUnix()){  //
             sh "mvn clean test"
         } else {
             bat "mvn clean test -Dcucumber.filter.tags=@regression"
